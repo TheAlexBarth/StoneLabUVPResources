@@ -1,0 +1,157 @@
+---
+title: "01-Entering Project Metadata"
+---
+
+!!!DO NOT SAVE THIS FILE!!!
+
+### Entering metadata pipeline
+
+This pipeline is for entering metadata into a newly received UVP project. Use the 00 template to check the project's formatting before you process anything.
+
+```{r Set-up, messages = F}
+rm(list = ls())
+library(StoneLabUVPTools)
+library(DataEditR)
+library(arrow)
+```
+
+### Locate your project directory
+
+Enter in the project name
+
+```{r Identifying project}
+proj_name <- #Enter Project Name Here
+path <- 'C:/'
+```
+
+```{r Generate Key Information}
+proj_path <- paste0(path, 'uvp5_sn209_',proj_name)
+
+raw_fnames <- dir(paste0(proj_path, '/raw'))
+proj_run <- proj_run_time(raw_fnames)#get max and min times of casts save to proj_times
+```
+
+### Enter the Cruise Information.
+
+This script is geared towards BATS & HYDRO cruises. However, you can enter any project here.
+
+```{r}
+cruise_id <- #Enter the cruise id (ex: ae2121). if multiple, separate by ;
+```
+
+### initialize storage
+
+```{r Initialize storage}
+#initialize metadata folders
+project_meta <- data.frame(
+  proj_name = proj_name,
+  cruises = cruise_id,
+  first_cast = proj_run[1],
+  last_cast = proj_run[2],
+  programs = NA
+) 
+
+cast_meta <- data.frame(
+  profile_id = rep(NA, length(raw_fnames)),
+  filename = raw_fnames, 
+  program = rep(NA,length(raw_fnames)),
+  program_id = rep(NA,length(raw_fnames)),
+  project_file_name = project_meta$proj_name,
+  lat = rep(NA, length(raw_fnames)),
+  lon = rep(NA, length(raw_fnames)),
+  ctd_ref = rep(NA, length(raw_fnames))
+)
+```
+
+## Import CTD event logs
+
+This script is geared towards BATS & HYDRO cruises. However, you can enter any project here.
+
+Here, you'll want to import the ctd event logs. However, if you don't have access to these files, you can skip this and fill out the meta data manually. Note it is extremely inadvisable to enter in false lat/lon values. If you do, enter them at 0N, 0W on zooprocess.
+
+If the project has an existing metadata file, you can import that in a lower section too!
+
+```{r}
+poss_programs <- #Write in c(prog_id, prog_code).
+ctd_info <- read_bios_event(poss_programs[1], poss_programs[2])
+```
+
+### Recommended cast parings
+
+This will recommend cast pairings. You will need to repeat for individual programs
+
+```{r}
+matched_ctd <- recommend_ctd(ctd_info, raw_fnames)
+for(i in 1:nrow(matched_ctd)){
+  r <- which(cast_meta$filename == matched_ctd$filename[i])
+  if(length(r) == 0){
+    next()
+  }
+  cast_meta$profile_id[r] <- matched_ctd$profileid[i]
+  cast_meta$ctd_ref[r] <- matched_ctd$ctd_ref[i]
+  cast_meta$lat[r] <- matched_ctd$lat[i]
+  cast_meta$lon[r] <- matched_ctd$lon[i]
+  cast_meta$program[r] <- poss_programs[1]
+  cast_meta$program_id[r] <- poss_programs[2]
+}
+```
+
+## Match using meta
+
+Do not use this if the meta file is empty but existent
+
+```{r}
+# meta <- check_meta(proj_name = proj_name)
+# for(i in 1:nrow(meta)){
+#   r <- which(cast_meta$filename == meta$filename[i])
+#   if(length(r) == 0){
+#     next()
+#   }
+#   cast_meta$profile_id[r] <- meta$profileid[i]
+#   cast_meta$lat[r] <- meta$latitude[i]
+#   cast_meta$lon[r] <- meta$longitude[i]
+#   cast_meta$ctd_ref <- meta$ctdrosettefilename[i]
+# }
+```
+
+Get the cast meta
+
+```{r}
+cast_meta$lat <- sapply(cast_meta$lat, function(x) paste0(celestial::deg2dms(x), collapse = ":"))
+cast_meta$lon <- sapply(cast_meta$lon, function(x) paste0(celestial::deg2dms(x), collapse = ":"))
+```
+
+## Final wrap up
+
+You can now edit the meta file by hand if needed
+
+```{r}
+data_edit(cast_meta)
+```
+
+```{r}
+project_meta$programs <- paste(unique(paste0(cast_meta$program,cast_meta$program_id)),collapse = ";")
+```
+
+Now fill out zooprocess metadata using this template
+
+```{r}
+print(cast_meta)
+```
+
+# Save Cast and project meta
+
+```{r}
+meta_path <- paste0(paste0(path, proj_name, '_meta'))
+dir.create(meta_path)
+write_parquet(project_meta,sink = paste0(meta_path, '/proj_meta.parquet'))
+write_parquet(cast_meta, sink = paste0(meta_path, '/cast_meta.parquet'))
+```
+
+## Write a log note about meta entry
+
+```{r}
+note <- 'finished meta entry process.'
+write_admin_log(proj_path = proj_path,
+                note = note)
+```

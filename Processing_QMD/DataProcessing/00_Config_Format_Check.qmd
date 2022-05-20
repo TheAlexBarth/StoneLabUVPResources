@@ -1,0 +1,85 @@
+---
+title: "00 - Safety checks & Project Prep"
+---
+
+### Checking a new UVP project
+
+UVP projects are received from the UVP laptop then placed on the C:/ Drive of the local machine. You can access other files using these tools as well but this is designed for newly recieved projects.
+
+DO NOT SAVE THIS FILE. It is written as-is for everything to flow-well
+
+```{r Set-up}
+rm(list = ls())
+library(StoneLabUVPTools)
+```
+
+### Enter your data
+
+In the code chunk below, write in the project name. Do not include the "uvp5_sn209"
+
+```{r Variable Selection}
+proj_name <- #Enter project name here
+```
+
+### Check project configuration
+
+This chunk will check the config of the project. Assuming this is the UVP5_sn209
+
+This checks the pixel size (should be 0.092), SMbase, SMzoo, and ESDmin.
+
+```{r Check Project Config Files}
+check_config_file(proj_name = proj_name)
+```
+
+If you get a mismatch warning, you should check out the config format. It should look like: ![](../media/uvp_guide_01_config-setup.png){width="347"}
+
+You can change the config file in zooprocess advanced mode. **Once you do so, write an admin log below!**
+
+Note that if the config is updated, the SMbase can still not be changed. This is set into the .ini files before the UVP acquisition starts.
+
+### Check for faulty casts
+
+Sometimes, the UVP starts a cast but doesn't actually record any images. This will
+go through and check for any faulty casts. 
+
+*this can also remove faulty casts.* Proceed with caution!!
+
+```{r Check for faulty casts}
+find_faulty(proj_name = proj_name)
+```
+
+**CHECK THE BAD CASTS BEFORE DELETING!!**
+If there are no bad casts, this should not run!
+```{r Remove bad casts}
+rem_faulty(proj_name = proj_name)
+```
+
+
+
+### Optional:
+
+#### Change the project name.
+
+The projects should follow a naming convention of cruiseID_programID\_... where the cruise ID refers to the boat/cruise number and any programs are listed. For example: ae2112_bats383_hs14
+
+If a project is received with an incorrect naming format, it should be fixed PRIOR to processing images
+
+Proceed with extreme caution here. However, this should work smoothly. You can do it even after filling out metadata if you realize there are multiple programs in this project.
+
+```{r Change Project Name}
+current_name <- proj_name
+new_name <- # Enter new name
+
+change_proj_name(current_name = current_name, new_name = new_name)
+
+```
+
+#### Write an admin log note
+
+If you make any changes to the
+
+```{r Log Notes}
+note <- # Enter your note here
+proj_path <- paste0('C:/', 'uvp5_sn209_',proj_name)
+write_admin_log(proj_path = proj_path, note = note)
+```

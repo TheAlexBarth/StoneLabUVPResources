@@ -1,0 +1,37 @@
+---
+03: "Process Vignettes and document any errors"
+---
+
+```{r}
+rm(list=ls())
+library(StoneLabUVPTools)
+```
+
+!!!DO NOT SAVE THIS FILE!!!
+
+### Select batch process
+
+### Check for processing errors:
+
+Processing errors can occur during the processing. These will shoot up little error dialog boxes which will stop the process. Take note of these error and log them below.
+
+Sometimes, there are issues processing certain casts as well. You should go through and check the work folder to be sure that there are no issues with any of the work folders.
+
+```{r Take Note}
+proj_name <-  #write project name here
+path <-  'C:/'
+
+proj_path <- paste0(path, 'uvp5_sn209_', proj_name)
+
+note = #write your note here
+write_admin_log(proj_path = proj_path,
+                note = note)
+```
+
+### All done!
+
+Now you should send the project to ecopart via the LoV server (filezilla). You should then store the project in several safe-backup storage locations.
+
+The meta-data files should then be incorporated into the database for long-term storage.
+
+A Cruise report should also be generated with the cruise report generator.
