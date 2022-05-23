@@ -103,7 +103,7 @@ Do not use this if the meta file is empty but existent
 ```{r}
 # meta <- check_meta(proj_name = proj_name)
 # for(i in 1:nrow(meta)){
-#   r <- which(cast_meta$filename == meta$filename[i])
+#   r <- which(gsub('HDR', "",cast_meta$filename) == meta$filename[i])
 #   if(length(r) == 0){
 #     next()
 #   }
