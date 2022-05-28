@@ -1,0 +1,219 @@
+---
+title: "UVP Data Management"
+subtite: "Alex Barth"
+format:
+    revealjs:
+        transition-speed: fast
+        navigation-mode: vertical
+        controls-layout: bottom-right
+        controls-tutorial: true
+        theme: serif
+        css: pres_format.css
+---
+
+# Currently:
+Our data management has no clear plan. 
+This results is a mess of files, hard-drives, and headaches.\
+Click down to see the current situtation:
+
+## {auto-animate="true" auto-animate-duration=".25"}
+A project gets set-up with variable formats.\
+The variable project names create tracking issues
+
+:::{data-id='cur01' .imgDiv}
+![](./media/curr_state_01.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+Raw data are then collected by the UVP.\
+These get stored on the local computer
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_02.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+Then, raw data are backed-up to a local harddrive.\
+Data are also transferred to USC-computer
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_03.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+From here, data again backed-up to harddrives.\
+From one of these, they are transfered to processing
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_05.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+Processing will create new files for meta-data\
+There are corresponding vignettes and particle data too.
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_07.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+However, the pathway to processing is not consistent\
+This results in messy storage of partial projects
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_10.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+Regardless of transfer pathway, once processed, data are sent
+to the LoV server
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_11.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+Importing the data to Ecotaxa and Ecopart creates 
+two connected-projects.
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_12.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+In Ecotaxa, vignettes are sorted and validated.\
+Once validated, zooplankton data are available in Ecopart.
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_13.png)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25"}
+Ecopart export then provided processed data for analysis.\
+However, we don't have a clear file storage system.
+
+:::{data-id='cur01' class='imgDiv' .r-stretch}
+![](./media/curr_state_14.png)
+:::
+
+# A New Path:
+By laying out a standard operating procedure for our data management,
+we can create a robust, easy-to-follow system. This will allow us to
+spend less time checking back over old notes, less time explaining work flows
+to new students, and more time studying ecology!\
+Click down to see the plan:
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+UVP management can be separated into four categories:
+
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_01.png)
+:::
+
+::: footer
+
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Project Configuration:
+Project will be set-up consistenly for easy collection
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_02.png)
+:::
+
+::: footer
+Read about [project configuration](#) and [raw files](#)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Data Transfer:\
+After local storage, raw projects can be transferred
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_03.png)
+:::
+
+::: footer
+Data can be transferred directly to [processing computer](#)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Local Processing:\
+Processing will create metafiles, zooplankton and particle data.
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_03.png)
+:::
+
+::: footer
+Meta-entry is facilitated by a [pipeline](#)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Post-process transfer:\
+Processed projects can be copied to the LoV server then transferred to storage
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_04.png)
+:::
+
+::: footer
+
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Web processing:\
+Data will be imported with Ecotaxa and Ecopart
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_05.png)
+:::
+
+::: footer
+Detailed instructions for [UVP import](https://sites.google.com/view/piqv/piqv-manuals/ecotaxa-manuals)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Web processing:\
+Vingettes are still validated through Ecotaxa.
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_06.png)
+:::
+
+::: footer
+See the [Ecotaxa-UVP guide](#)
+:::
+
+## {auto-animate="true" auto-animate-duration=".25" auto-animate-unmatched="fade"}
+Final Products:\
+Data are exported and stored on the datahub.
+
+:::{data-id="new" .r-stretch class="imgDiv"}
+![](./media/new_state_07.png)
+:::
+
+::: footer
+Get instructions for [processing to data hub](#)
+:::
+
+# Final Plan
+
+:::: {.columns}
+
+::: {.column width='30%'}
+- Note we delete old projects off LoV Server
+- Noting can be stored long-term on the processing computer
+:::
+
+:::{.column width="70" .r-strech class='imgDiv'}
+![](./media/new_state_07)
+:::
+
+::::
+
+::: footer
+See the full [user guide](https://thealexbarth.github.io/StoneLabUVPResources)
+:::

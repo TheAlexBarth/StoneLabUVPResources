@@ -1,23 +1,21 @@
 project:
-  type: book
+  type: website
 
-book:
+website:
   title: "StoneLabUVPGuide"
   author: "Jane Doe"
   date: "5/26/2022"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+  sidebar:
+    style: 'docked'
+    search: true
+    contents:
+      - index.qmd
 
-bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    theme: sandstone
+    css: alex_style.css
 
 editor: visual
 

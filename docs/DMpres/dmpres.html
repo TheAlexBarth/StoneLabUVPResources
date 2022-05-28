@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Auto Animate</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="./dist/reveal.css">
+		<link rel="stylesheet" href="./dist/theme/serif.css" id="theme">
+        <link rel="stylesheet" href="./alex_pres_css.css"
+		<link rel="stylesheet" href="./plugin/highlight/monokai.css">
+		
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			
+			<div class="slides">
+				<section>
+					<h2>UVP Data Management Plan</h2>
+					<h3>Alex Barth</h3>
+				</section>
+				<section>
+					<section>
+						<h3>
+							Currently, there is no coherent data plan.
+							This results in a mess of data storage and access issues.
+						</h3>
+						<h4>
+							Click down to see our current pathways
+						</h4>
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							A project gets set-up. With variable formats
+						</p>
+						<img data-id="1a" src="./media/curr_state_01.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Then the UVP collects raw data
+						</p>
+						<img data-id="1a" src="./media/curr_state_02.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							This data gets backed up and transferred.
+						</p>
+						<img data-id="1a" src="./media/curr_state_03.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Data are again backed-up and sent to processing
+						</p>
+						<img data-id="1a" src="./media/curr_state_05.png" style="height: 60%;
+						width: 60%;">
+					</section>					
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Meta-data and processing generates new files.
+						</p>
+						<img data-id="1a" src="./media/curr_state_07.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							However, the pathway to this point can be variable.
+						</p>
+						<img data-id="1a" src="./media/curr_state_10.png" style="height: 60%;
+						width: 60%;">
+						<p>
+							This results in inconsistent, messy data.
+						</p>
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Regardless of transfer pathway, once processed, data are sent to LoV Server.
+						</p>
+						<img data-id="1a" src="./media/curr_state_11.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Importing creates two, related projects.
+						</p>
+						<img data-id="1a" src="./media/curr_state_12.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Validated vignettes are accessible in ecopart
+						</p>
+						<img data-id="1a" src="./media/curr_state_13.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<p>
+							Exported data are then sent somewhere to be analyzed or saved.
+						</p>
+						<img data-id="1a" src="./media/curr_state_14.png" style="height: 60%;
+						width: 60%;">
+					</section>
+					<section data-auto-animate data-auto-animate-unmatched="slide-up">
+						<h3>
+							This is a mess!
+						</h3>
+						<p>
+							Ultimately, we end up with useless (not safe) redundancy and 
+							difficulty tracking projects. We need a new method. It must store data
+							safely but also be consistent and comprehenable to ourselves.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							A new way forward:
+						</h2>
+						<p>
+							By laying out a clear data management procedures,
+							we can create a robust system. We'll spend less time
+							checking back over old notes, less time explaining to new students,
+							and more time being biologists!
+						</p>
+						<p>
+							Click down to see the plan:
+						</p>
+					</section>
+					<section data-auto-animate>
+						<p>
+							UVP data management is 4 fundamental categories:
+						</p>
+						<img data-id="2a" src="./media/new_state_01.png" style="height:60%; width:60%;">
+					</section>
+					<section data-auto-animate>
+						<p>
+							Project configuration:
+						</p>
+						<img data-id="2a" src="./media/new_state_02.png" style="height:60%; width:60%;">
+						<div class="footer">
+                            <p>
+                                Read about <a href="#">project configuration</a> and <a href="#">raw files</a>.
+                            </p>
+                        </div>
+					</section>
+					<section data-auto-animate>
+						<p>
+							Pre-Process transfer:
+						</p>
+						<img data-id="2a" src="./media/new_state_03.png" style="height:60%; width:60%;">
+                        <div class="footer">
+                            <p>
+                                Read about <a href="#">Connecting to Processing Computer</a>
+                            </p>
+                        </div>
+					</section>
+                    <section data-auto-animate>
+						<p>
+							Local Processing:
+						</p>
+						<img data-id="2a" src="./media/new_state_03.png" style="height:60%; width:60%;">
+                        <div class="footer">
+                            <p>
+                                Follow the <a href="#">meta entry and processing guide.</a>
+                            </p>
+                        </div>
+					</section>
+					<section data-auto-animate>
+						<p>
+							Post-processing transfer:
+						</p>
+						<img data-id="2a" src="./media/new_state_04.png" style="height:60%; width:60%;">
+                        <div class="footer">
+                            <p>
+                                Read about <a href="#">project back-up and LoV </a>
+                            </p>
+                        </div>
+					</section>
+					<section data-auto-animate>
+						<p>
+							Web-Processing:
+						</p>
+						<img data-id="2a" src="./media/new_state_05.png" style="height:60%; width:60%;"> 
+                        <div class="footer">
+                            <p>
+                                Projects should be created <a href= "https://sites.google.com/view/piqv/piqv-manuals/ecotaxa-manuals">
+                                    through Ecopart</a>
+                            </p>
+                        </div>
+                    </section>
+					<section data-auto-animate>
+						<p>
+							Web-Processing:
+						</p>
+						<img data-id="2a" src="./media/new_state_06.png" style="height:60%; width:60%;">
+                        <div class="footer">
+                            <p>
+                                Refer to the <a href="#"> StoneLabID Guide </a> for classification
+                            </p>
+                        </div>
+					</section>
+					<section data-auto-animate>
+						<p>
+							Final Products:
+						</p>
+						<img data-id="2a" src="./media/new_state_07.png" style="height:60%; width:60%;">
+                        <div class="footer">
+                            <p>
+                                Refer to the <a href="#"> DataHub upload documents </a>.
+                            </p>
+                        </div>
+					</section>
+				</section>
+				<section>
+					<p>
+						Final Plan:
+					</p>
+                    <div class="container">
+                        <div class="col">
+                            <ul>
+                                <li><p>Data will be accessible through the hub</p></li>
+                                <li><p>No long term data storage on the LoV server or processing computer</p></li>
+                            </ul>
+                        </div>
+                        <div class="col" style='width: max-content; height:max-content'>
+                            <img data-id="2a" src="./media/new_state_07.png" style="height:60%; width:60%;">
+                        </div>
+                    </div>
+				</section>
+			</div>
+		</div>
+
+		<script src="./dist/reveal.js"></script>
+		<script src="./plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				center: true,
+				hash: true,
+				plugins: [ RevealHighlight ]
+			});
+		</script>
+        <script src="./plugin/menu/menu.js"></script>
+        <script>
+          Reveal.initialize({
+            plugins: [ RevealMenu ]
+          });
+        </script>
+
+	</body>
+</html>
