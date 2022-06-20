@@ -5,30 +5,25 @@ slide-format: revealjs
 
 # Introduction
 
-This booklet is a set of guides and resources for anyone in our lab working
-on UVP Data.
+This booklet is a set of guides and resources for anyone in our lab working on UVP Data.
 
 Anyone working with the UVP needs to thorougly read throught the [UVP manual](https://sites.google.com/view/piqv/piqv-manuals/instruments-manuals)\
 
-In this guide there are several resources for processing UVP data. First, there are specifics as to how projects should be configured. Next, there is a dictionary for UVP files and terms. There is also resources for connecting to the processing computer, transferring data, and more. 
-Validation of vignettes should follow the [StoneLAB ID guide](#)
-Analysis of UVP data is made easy with [EcotaxaTools](https://thealexbarth.github.io/Ecotaxa_Tools_Tutorial)
-
-
+In this guide there are several resources for processing UVP data. First, there are specifics as to how projects should be configured. Next, there is a dictionary for UVP files and terms. There is also resources for connecting to the processing computer, transferring data, and more. Validation of vignettes should follow the [StoneLAB ID guide](#) Analysis of UVP data is made easy with [EcotaxaTools](https://thealexbarth.github.io/Ecotaxa_Tools_Tutorial)
 
 # Data Management:
 
 UVP processing and data management can be broken down into four fundamental phases:
 
-- [Project Configuration](#)
-- [Local Processing](#)
-- [Web Processing](#)
-- [Data Processing](#)
+-   [Project Configuration](./project_configuration.html)
+-   [Local Processing](#)
+-   [Web Processing](#)
+-   [Data Processing](#)
 
 ![Figure 1: Data Management Plan. Arrows display movement of data with actions asssociated with those movements shown as grey ellipses. Hard Drives and computers are shown by blue hexagons. Data products are shown in squares. These are color coded and shown inside a computer if located there.](./media/new_stat_07.png)
 
-
 ## A walk through the Data management plan:
+
 Our data were previously acquired and moved between a set of external harddrives with no clear system
 
 <div>

@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Stone Lab UVP Guide"
-  author: "Jane Doe"
+  author: "Alex Barth"
   date: "5/26/2022"
   sidebar:
     style: 'docked'

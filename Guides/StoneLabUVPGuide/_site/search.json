@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "file_guide.html",
+    "href": "file_guide.html",
+    "title": "UVP File Guide",
+    "section": "",
+    "text": "The UVP project structure can be extremely confusing"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Introduction & Data Plan",
@@ -12,5 +19,12 @@
     "title": "Introduction & Data Plan",
     "section": "A walk through the Data management plan:",
     "text": "A walk through the Data management plan:\nOur data were previously acquired and moved between a set of external harddrives with no clear system"
+  },
+  {
+    "objectID": "project_configuration.html",
+    "href": "project_configuration.html",
+    "title": "Project Configuration & On-Ship Piloting",
+    "section": "",
+    "text": "When setting up a new UVP project, it is important that the configuration is done correctly. This will impact the processing of raw vignettes and particle data.\n\n\nFirst, you have to enter the UVP Serial Number. This should be 209.\n\n\n\n\n\nNext, you must fill out the project name. Follow the lab’s naming convention:\n[A-Z][A-Z](0-9)_[*]\n\nThis format should be a two-letter ship abbriveation with the cruise number. Then any project acyronyms should be listed separated as underscores.\nNote that the most important part of this project name is the cruise number. If there is no project acyronym, that is fine. Multiple project acroynms should be separated by underscores if they are on the same cruise. Alternatively, multiple UVP projects can be created if the scientific projects on a cruise are distinct and need to be separated (data goes to different people or something).\n\nFor example:\n\n\nAE2112_bats385_hs1413\nOR\n\nAE2112_bats365\nAE2112_hs1413\n\nMetadata should be entered with operator, cheif scientistis, and data owner information\n\nProject Configuration is critically important.\nThe project configuration defaults are not always correct.\nThey should be filled in accordingly:\n\n\nSpecifically Note:\n\n\npixel size is 0.092 (it is default at 0.088)\n\nESDmin should be set to 0.5 (it is default at 0.25)\n\nsmbase should be set to 2 (it is default at 3)\n\n\nFinally, select yes for enabling piloting tools:\n\n\nHere the settings may vary depending on how the CTD is configured.\n\nBe sure to select the appropriate COMMs port to talk to the UVP\nIf this is incorrectly configured, the project configuration cannot be fixed.\n\n\n\nThere will be a warning which instructs users to get .ini files from the UVP\n\n\nThis must be done once at the start of project configuration.\n\nNavagate to UVP Piloting tools.\n\nSelect the option to get configuration files from UVP Camera.\n\n\nProject Configuration is now complete"
   }
 ]
